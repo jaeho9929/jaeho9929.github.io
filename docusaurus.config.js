@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Haruki Project',
+  tagline: 'What I talk about when I talk about running',
   url: 'https://jaeho9929.github.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -26,8 +26,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ko',
+    locales: ['ko'],
   },
 
   presets: [
@@ -39,15 +39,20 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          /*
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          */
         },
         blog: {
+          routeBasePath: '/',
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          /*
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          */
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -60,21 +65,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: '하루키 프로젝트',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Haruki Project Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
+            to: '/',
+            label: '블로그',
+            position: 'left'
+          },
+          {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: '문서',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/jaeho9929',
             label: 'GitHub',
             position: 'right',
           },
@@ -82,6 +91,7 @@ const config = {
       },
       footer: {
         style: 'dark',
+        /*
         links: [
           {
             title: 'Docs',
@@ -118,12 +128,13 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/jaeho9929/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        */
+        copyright: `Copyright © ${new Date().getFullYear()} Jay.Prog. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
