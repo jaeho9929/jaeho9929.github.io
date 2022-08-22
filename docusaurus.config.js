@@ -10,7 +10,8 @@ const config = {
   tagline: 'What I talk about when I talk about running',
   url: 'https://jaeho9929.github.io/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  // onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
