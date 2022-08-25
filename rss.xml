@@ -4,10 +4,30 @@
         <title>Haruki Project Blog</title>
         <link>https://jaeho9929.github.io/</link>
         <description>Haruki Project Blog</description>
-        <lastBuildDate>Sun, 21 Aug 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Aug 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ko</language>
+        <item>
+            <title><![CDATA[Cloud Load Balancing, Auto Scaling]]></title>
+            <link>https://jaeho9929.github.io/gcp-7</link>
+            <guid>gcp-7</guid>
+            <pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cloud Load Balancing (CLB)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cloud-load-balancing-clb">Cloud Load Balancing (CLB)<a class="hash-link" href="#cloud-load-balancing-clb" title="제목으로 바로 가기">​</a></h2><ul><li>인스턴스 또는 기기 기반의 솔루션이 아님 <ul><li>물리적 인프라에 큰 리소스 사용하지 않음</li><li>인스턴스 기반 부하 분산 특유의 HA 확장 관리 문제가 발생하지 않음</li></ul></li><li>모든 트래픽 (HTTP(s), TCP, UDP)에 적용 가능</li><li>pre-warm up 과정이 필요 없음 </li><li>자동 확장 기능 -&gt; 가까운 지역을 우선적으로 라우팅</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="global-vs-regional">Global vs Regional<a class="hash-link" href="#global-vs-regional" title="제목으로 바로 가기">​</a></h2><ul><li>Global CLB <ul><li>One anycast IP</li><li>IPv6 Support</li><li>HTTP(s) Load Balancing (LB)</li><li>SSL Proxy</li><li>TCP Proxy</li></ul></li><li>Regional CLB<ul><li>Only IPv4 Support</li><li>Internal TCP/UDP LB</li><li>Network TCP/UDP LB</li></ul></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="external-vs-internal">External vs Internal<a class="hash-link" href="#external-vs-internal" title="제목으로 바로 가기">​</a></h2><ul><li>External LB<ul><li>VPC 가 아닌 다른 네트워크를 통해서 트래픽이 발생하는 경우</li><li>HTTP(s) LB</li><li>Network TCP/UDP LB</li><li>SSL Proxy</li><li>TCP Proxy</li></ul></li><li>Internal LB<ul><li>VPC 네트워크 내에서만 트래픽 발생의 경우</li><li>Internal TCP/UDP LB</li></ul></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="google-clb-종류">Google CLB 종류<a class="hash-link" href="#google-clb-종류" title="제목으로 바로 가기">​</a></h2><ul><li>HTTP(s) LB</li><li>SSL Proxy LB</li><li>TCP Proxy LB</li><li>Network Traffic LB</li><li>Internal TCP/UDP LB</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="auto-scailing">Auto Scailing<a class="hash-link" href="#auto-scailing" title="제목으로 바로 가기">​</a></h2><ul><li>리소스 사용량에 따라서 VM이 자동으로 증가하고 감소하는 기능</li><li>Instance Group을 통해서 설정 가능</li><li>Instance Template을 통해서 Managed Instance Group을 만들면 동종의 Instance 들이 만들어 지기 때문에 애플리케이션에서 트래픽 증가와 감소를 원활하게 처리 가능</li><li>측정 항목<ul><li>CPU 사용률</li><li>LB 사용량</li><li>Stackdriver Monitoring</li><li>Custom Index</li></ul></li></ul>]]></content:encoded>
+            <category>cloud</category>
+            <category>gcp</category>
+        </item>
+        <item>
+            <title><![CDATA[Google Cloud Storage]]></title>
+            <link>https://jaeho9929.github.io/gcp-8</link>
+            <guid>gcp-8</guid>
+            <pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Google Cloud Storage (GCS)]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="google-cloud-storage-gcs">Google Cloud Storage (GCS)<a class="hash-link" href="#google-cloud-storage-gcs" title="제목으로 바로 가기">​</a></h2><ul><li>GCP의 대표적인 객체 Repository -&gt; AWS S3</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="glossary">Glossary<a class="hash-link" href="#glossary" title="제목으로 바로 가기">​</a></h2><ul><li>프로젝트</li><li>버킷 </li><li>Repository 등급</li><li>객체</li><li>지리적 중복</li><li>객체 불변성</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="repository-등급">Repository 등급<a class="hash-link" href="#repository-등급" title="제목으로 바로 가기">​</a></h2><ul><li>Multi-Regional Storage : 높은 가용성, 지리적 중복 제공</li><li>Regional Storage</li><li>Nearline Storage</li><li>Coldline Storage : 낮은 가용성</li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="gsutil">gsutil<a class="hash-link" href="#gsutil" title="제목으로 바로 가기">​</a></h2><ul><li>CLI 환경에서 GCS에 접근 할 수 있는 명령어</li><li>기능<ul><li>버킷 생성 및 삭제</li><li>객체 업로드, 다운로드, 삭제</li><li>버킷 및 객체 나열</li><li>객체 이동, 복사 및 이름 바꾸기</li><li>객체 및 버킷의 ACL 수정</li></ul></li><li>gs://<em>bucket name</em>/<em>object name</em></li></ul>]]></content:encoded>
+            <category>cloud</category>
+            <category>gcp</category>
+        </item>
         <item>
             <title><![CDATA[로그인 시에 구현해야 할 사항]]></title>
             <link>https://jaeho9929.github.io/login-impl</link>
